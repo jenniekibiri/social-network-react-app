@@ -38,6 +38,18 @@ fetch('http://localhost:8080/signup',{
     return response.json(user)
 }).catch(error=>{
     console.log(error)
+}).then((data)=>{
+    if(data.error){
+        this.setState({error:data.error})
+    }
+    else{
+        this.setState({
+          error:'',
+          name:'',
+          email:'',
+          password:''
+        })
+    }
 })
 
      }
