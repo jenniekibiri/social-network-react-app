@@ -7,7 +7,8 @@ import React, { Component } from 'react'
              name:"",
              email:"",
              password:"",
-             error:""
+             error:"",
+             open:false
 
          }
      }
@@ -17,6 +18,7 @@ import React, { Component } from 'react'
 
 
      handleChange =(email)=>(event)=>{
+         this.setState({error:''})
          this.setState({[email]:event.target.value})
      }
      clickSubmit = event=>{
@@ -38,7 +40,7 @@ fetch('http://localhost:8080/signup',{
     return response.json(user)
 }).catch(error=>{
     console.log(error)
-}).then((data)=>{
+}).then(data=>{
     if(data.error){
         this.setState({error:data.error})
     }
@@ -47,18 +49,22 @@ fetch('http://localhost:8080/signup',{
           error:'',
           name:'',
           email:'',
-          password:''
+          password:'',
+          open:true
+
         })
     }
 })
 
      }
     render() {
-        const {name,email,password} = this.state
+        const {name,email,password,error,open} = this.state
         return (
             <div className="container">
                 <h2 className="mb-5 mt-5">Signup</h2>
            <form >
+                             <div className="alert alert-danger" style={{display:error ? '':'none'}} >{error}</div>
+                             <div className="alert alert-info" style={{display:open ? '':'none'}} >New account has been  successfully created. Please Login!</div>
                <div className="form-group">
                              <label className="text-muted">Name</label>
                <input type="text" className="form-control" onChange={this.handleChange("name")} value={name}></input>
