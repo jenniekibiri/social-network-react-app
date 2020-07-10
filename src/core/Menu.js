@@ -1,26 +1,8 @@
 import React, { Fragment } from "react";
 import { Link, useHistory, withRouter } from "react-router-dom";
-//next is the onclick link
-export const signout = (next) => {
-  if (window !== "undefined") localStorage.removeItem("jwt");
-  next();
-  return fetch("https://letsnetwork.herokuapp.com/signout", {
-    method: "POST",
-  })
-    .then((response) => {
-      console.log("signout", response);
-      return response.json();
-    })
-    .catch((err) => console.log(err));
-};
+import{signout,isAuthenticated} from '../auth/auth'
 
-export const isAuthenticated = () => {
-  if (localStorage.getItem("jwt")) {
-    return JSON.parse(localStorage.getItem("jwt"));
-  } else {
-    return false;
-  }
-};
+
 function Menu() {
   const history = useHistory();
   return (
@@ -47,7 +29,7 @@ function Menu() {
         )}
 
         {isAuthenticated() && (
-          <div>
+          <Fragment>
             <li className="nav-item">
               <a
                 className="nav-link "
@@ -57,11 +39,13 @@ function Menu() {
                 Sign out
               </a>
             </li>
-          </div>
+            <li className="nav-item">
+              <a className="nav-link">{isAuthenticated().user.name}</a>
+            </li>
+          </Fragment>
         )}
       </ul>
     </div>
   );
 }
-
 export default withRouter(Menu);
