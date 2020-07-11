@@ -26,6 +26,7 @@ function Menu() {
             </li>
           </Fragment>
         )}
+    
 
         {isAuthenticated() && (
           <Fragment>
@@ -39,10 +40,12 @@ function Menu() {
               </a>
             </li>
             <li className="nav-item">
-              <Link to={`/user/${isAuthenticated().user._id}`}
-                className="nav-link" style={{ color: "#fff"}}>{`${
-                  isAuthenticated().user.name
-                }'s Profile`}
+              <Link
+                to={`/user/${isAuthenticated().user._id}`}
+                className="nav-link"
+                style={{ color: "#fff" }}
+              >
+                {`${isAuthenticated().user.name}'s Profile`}
               </Link>
             </li>
           </Fragment>

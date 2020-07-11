@@ -8,8 +8,9 @@ export const isAuthenticated = () => {
   //next is the onclick link
 export const signout = (next) => {
     if (window !== "undefined") localStorage.removeItem("jwt");
-    next();
-    return fetch("https://letsnetwork.herokuapp.com/signout", {
+  next();
+ 
+    return fetch( `${process.env.REACT_APP_API_URL}/signout`, {
       method: "POST",
     })
       .then((response) => {

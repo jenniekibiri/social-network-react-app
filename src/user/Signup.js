@@ -27,7 +27,7 @@ class Signup extends Component {
       name,
       password,
     };
-    fetch("https://letsnetwork.herokuapp.com/signup", {
+    fetch( `${process.env.REACT_APP_API_URL}/signin`, {
       method: "POST",
       headers: {
         Accept: "application/json",
