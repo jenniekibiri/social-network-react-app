@@ -1,7 +1,6 @@
 import React, { Fragment } from "react";
 import { Link, useHistory, withRouter } from "react-router-dom";
-import{signout,isAuthenticated} from '../auth/auth'
-
+import { signout, isAuthenticated } from "../auth/auth";
 
 function Menu() {
   const history = useHistory();
@@ -40,7 +39,11 @@ function Menu() {
               </a>
             </li>
             <li className="nav-item">
-              <a className="nav-link">{isAuthenticated().user.name}</a>
+              <Link to={`/user/${isAuthenticated().user._id}`}
+                className="nav-link" style={{ color: "#fff"}}>{`${
+                  isAuthenticated().user.name
+                }'s Profile`}
+              </Link>
             </li>
           </Fragment>
         )}
