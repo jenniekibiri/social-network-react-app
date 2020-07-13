@@ -1,7 +1,5 @@
 import React, { Component } from "react";
 import { Redirect } from "react-router-dom";
-const dotenv = require('dotenv')
-dotenv.config()
 class Signin extends Component {
   constructor() {
     super();
