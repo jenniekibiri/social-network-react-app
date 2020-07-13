@@ -14,7 +14,6 @@ export const signout = (next) => {
       method: "POST",
     })
       .then((response) => {
-        console.log("signout", response);
         return response.json();
       })
       .catch((err) => console.log(err));
