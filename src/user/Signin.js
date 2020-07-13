@@ -1,5 +1,7 @@
 import React, { Component } from "react";
 import { Redirect } from "react-router-dom";
+const dotenv = require('dotenv')
+dotenv.config()
 class Signin extends Component {
   constructor() {
     super();
@@ -36,7 +38,7 @@ class Signin extends Component {
       email,
       password,
     };
-    console.log(`${process.env.REACT_APP_API_URL}`)
+
     //get the route from backend
     fetch( `${process.env.REACT_APP_API_URL}/signin`, {
       method: "POST",
