@@ -36,6 +36,7 @@ class Signin extends Component {
       email,
       password,
     };
+    console.log(`${process.env.REACT_APP_API_URL}`)
     //get the route from backend
     fetch( `${process.env.REACT_APP_API_URL}/signin`, {
       method: "POST",

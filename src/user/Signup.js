@@ -27,7 +27,7 @@ class Signup extends Component {
       name,
       password,
     };
-    fetch( `${process.env.REACT_APP_API_URL}/signin`, {
+    fetch( `${process.env.REACT_APP_API_URL}/signup`, {
       method: "POST",
       headers: {
         Accept: "application/json",
