@@ -41,6 +41,15 @@ function Menu() {
             </li>
             <li className="nav-item">
               <Link
+                to='/Users'
+                className="nav-link"
+                style={{ color: "#fff" }}
+              >
+             Users
+              </Link>
+            </li>
+            <li className="nav-item">
+              <Link
                 to={`/user/${isAuthenticated().user._id}`}
                 className="nav-link"
                 style={{ color: "#fff" }}
@@ -48,6 +57,7 @@ function Menu() {
                 {`${isAuthenticated().user.name}'s Profile`}
               </Link>
             </li>
+           
           </Fragment>
         )}
       </ul>

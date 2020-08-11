@@ -81,7 +81,7 @@ class Signin extends Component {
 
           {loading ? (
             <div className="Jumbotron text-center">
-              <h2>Loading ...</h2>
+              <h2 className="spinner">loading ...</h2>
             </div>
           ) : (
             ""
