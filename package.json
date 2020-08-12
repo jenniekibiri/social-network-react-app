@@ -8,6 +8,7 @@
   },
   "dependencies": {
     "react": "^16.13.1",
+    "react-avatar": "^3.9.7",
     "react-dom": "^16.13.1",
     "react-router-dom": "^5.2.0",
     "react-scripts": "0.9.5"
