@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-
+import { Link } from "react-router-dom";
 class Signup extends Component {
   constructor() {
     super();
@@ -71,7 +71,7 @@ class Signup extends Component {
             className="alert alert-info"
             style={{ display: open ? "" : "none" }}
           >
-            New account has been successfully created. Please Login!
+            New account has been successfully created. <Link to='/signin'>Signin</Link>!
           </div>
           <div className="form-group">
             <label className="text-muted">Name</label>

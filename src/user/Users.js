@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { list } from '../user/apiUser'
-
+import {Link} from 'react-router-dom'
 import Avatar from 'react-avatar'; 
 import '../css/style.css'
  export class Users extends Component {
@@ -36,7 +36,7 @@ import '../css/style.css'
      <div className="card-body">
           <h5 className="card-title">{user.name}</h5>
           <p className="card-text">{user.email}</p>
-       <a href="#" className="btn btn-raised btn-primary btn-sm">View Profile</a>
+          <Link to={`/user/${user._id}`} href="#" className="btn btn-raised btn-primary btn-sm">View Profile</Link>
      </div>
    </div>
 
