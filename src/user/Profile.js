@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import { isAuthenticated } from "../auth/auth";
 import { Redirect, Link } from "react-router-dom";
 import defaultImage from "../images/user.png";
+import DeleteUser from "../user/DeleteUser"
 export class Profile extends Component {
   constructor() {
     super();
@@ -22,7 +23,7 @@ export class Profile extends Component {
       },
     })
       .then((response) => {
-        console.log(response);
+
         return response.json();
       })
       .then((data) => {
@@ -65,18 +66,13 @@ export class Profile extends Component {
             {isAuthenticated().user &&
               isAuthenticated().user._id === this.state.user._id && (
                 <div className="mt-5">
-                  <Link
-                    className="btn btn-raised btn-success mr-5 mb-4 btn-sm"
+                  <Link className="btn btn-raised btn-success  btn-sm"
                     to={`/user/edit/${this.state.user._id}`}
                   >
-                    Edit Profile
+                  Edit Profile
                   </Link>
-                  <Link
-                    className="btn btn-raised btn-danger mr-5 mb-4 btn-sm" 
-                    to={`/user/delete/${this.state.user._id}`}
-                  >
-                    Delete Profile
-                  </Link>
+           
+             <DeleteUser userId={user._id} /> 
                 </div>
               )}
           </div>
