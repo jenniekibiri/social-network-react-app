@@ -38,7 +38,7 @@ class Signin extends Component {
     };
 
     //get the route from backend
-    fetch( `${process.env.REACT_APP_API_URL}/signin`, {
+    fetch(`${process.env.REACT_APP_API_URL}/signin`, {
       method: "POST",
       headers: {
         Accept: "application/json",

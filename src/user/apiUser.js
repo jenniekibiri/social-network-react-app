@@ -5,7 +5,6 @@ export const  list = () => {
 }
 export const removeAccount = (userId, token) => {
 
-console.log(userId)
   return fetch(`${process.env.REACT_APP_API_URL}/user/${userId}`, {
     method: "DELETE",
     headers: {
