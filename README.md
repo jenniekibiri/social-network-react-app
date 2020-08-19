@@ -1,6 +1,6 @@
 # A web app using react and nodejs backend
 
-[Link to backend code](https://github.com/jenniekibiri/nodejsbackend).
+[Link to backend code](https://github.com/jenniekibiri/nodejsbackend) 
 which is done using nodejs and mongodb.
 
 The  site allows users to create account,login,edit or delete account.
@@ -9,4 +9,4 @@ The user can also create postand see all users
 
 The app is deployed on heroku.
 
-[Visit the app]('https://socioh.herokuapp.com/')
+[Visit the app](https://socioh.herokuapp.com/)
