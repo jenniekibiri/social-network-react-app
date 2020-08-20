@@ -1,7 +1,7 @@
 import React, { Fragment } from "react";
 import { Link, useHistory, withRouter } from "react-router-dom";
 import { signout, isAuthenticated } from "../auth/auth";
-import '../css/style.css'
+import "../css/style.css";
 function Menu() {
   const history = useHistory();
   return (
@@ -29,9 +29,12 @@ function Menu() {
 
         {isAuthenticated() && (
           <Fragment>
-         
             <li className="nav-item">
-              <Link to="/createPosts" className="nav-link" style={{ color: "#fff" }}>
+              <Link
+                to="/createPosts"
+                className="nav-link"
+                style={{ color: "#fff" }}
+              >
                 Create Posts
               </Link>
             </li>
