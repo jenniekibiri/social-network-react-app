@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import { Redirect } from "react-router-dom";
+import SocialLogin from "./SocialLogin";
 class Signin extends Component {
   constructor() {
     super();
@@ -68,9 +69,14 @@ class Signin extends Component {
     if (redirectToHome) {
       return <Redirect to="/" />;
     }
+
     return (
       <div className="container">
         <h2 className="mb-5 mt-5">Signup</h2>
+
+        <hr />
+        <SocialLogin />
+        <hr />
         <form>
           <div
             className="alert alert-danger"

@@ -15,12 +15,12 @@ function Menu() {
         {!isAuthenticated() && (
           <Fragment>
             <li className="nav-item">
-              <Link className="nav-link " to="/signin">
+              <Link className="nav-link text-white" to="/signin">
                 Signin
               </Link>
             </li>
             <li className="nav-item">
-              <Link className="nav-link " to="/signup">
+              <Link className="nav-link text-white" to="/signup">
                 Signup
               </Link>
             </li>
