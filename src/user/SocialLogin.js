@@ -19,11 +19,9 @@ class SocialLogin extends Component {
       imageUrl: imageUrl,
     };
     socialLogin(user).then((data) => {
-      console.log("signin data: ", data);
       if (data.error) {
         console.log("Error Login. Please try again..");
       } else {
-        console.log("signin success - setting jwt: ", data);
         authenticate(data, () => {
           this.setState({ redirectToReferrer: true });
         });
