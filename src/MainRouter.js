@@ -5,8 +5,9 @@ import Signup from "./user/Signup";
 import Signin from "./user/Signin";
 import Profile from "./user/Profile";
 import Menu from "./core/Menu";
-import Users from "./user/Users"
-import EditProfile from "./user/EditUser"
+import Users from "./user/Users";
+import EditProfile from "./user/EditUser";
+import NewPost from "./posts/NewPost";
 
 const MainRouter = () => (
   <div>
@@ -19,7 +20,7 @@ const MainRouter = () => (
       <Route exact path="/user/edit/:userId" component={EditProfile} />
       <Route exact path="/users" component={Users} />
 
-
+      <Route exact path="/post/create" component={NewPost} />
     </Switch>
   </div>
 );

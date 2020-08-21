@@ -30,13 +30,11 @@ function Menu() {
         {isAuthenticated() && (
           <Fragment>
             <li className="nav-item">
-              <Link
-                to="/createPosts"
-                className="nav-link"
-                style={{ color: "#fff" }}
-              >
-                Create Posts
-              </Link>
+              <li className="nav-item">
+                <Link to={`/post/create`} className="nav-link text-white">
+                  Create Post
+                </Link>
+              </li>
             </li>
             <li className="nav-item">
               <Link to="/Users" className="nav-link" style={{ color: "#fff" }}>
