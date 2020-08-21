@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { allPosts } from "./apiPosts";
 import { Link } from "react-router-dom";
-import DefaultPost from "../images/flat.jpeg"
+import DefaultPost from "../images/flat.jpg"
 export class posts extends Component {
   constructor() {
     super();

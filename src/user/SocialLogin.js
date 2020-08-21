@@ -18,6 +18,7 @@ class SocialLogin extends Component {
       email: email,
       imageUrl: imageUrl,
     };
+
     socialLogin(user).then((data) => {
       if (data.error) {
         console.log("Error Login. Please try again..");
@@ -28,7 +29,7 @@ class SocialLogin extends Component {
       }
     });
   };
-
+  
   render() {
     const { redirectToReferrer } = this.state;
     if (redirectToReferrer) {
@@ -36,12 +37,17 @@ class SocialLogin extends Component {
     }
     return (
       <div className="container ">
-        <GoogleLogin
-          clientId="51203616981-ldm8946dv68h2ffv65d7v29qshba2pjm.apps.googleusercontent.com"
-          buttonText="Login with Google"
-          onSuccess={this.responseGoogle}
-          onFailure={this.responseGoogle}
-        />
+        <div className="row">
+          <div className="col-md-3">
+            <GoogleLogin
+              clientId="51203616981-ldm8946dv68h2ffv65d7v29qshba2pjm.apps.googleusercontent.com"
+              buttonText="Login with Google"
+              onSuccess={this.responseGoogle}
+              onFailure={this.responseGoogle}
+            />
+          </div>
+         
+        </div>
       </div>
     );
   }
