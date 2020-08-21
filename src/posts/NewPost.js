@@ -14,7 +14,7 @@ class NewPost extends Component {
       user: {},
       fileSize: 0,
       loading: false,
-      redirectToProfile: false,
+      redirectToHome: false,
     };
   }
 
@@ -63,7 +63,7 @@ class NewPost extends Component {
             loading: false,
             title: "",
             body: "",
-            redirectToProfile: true,
+            redirectToHome: true,
           });
         }
       });
@@ -115,11 +115,11 @@ class NewPost extends Component {
       user,
       error,
       loading,
-      redirectToProfile,
+      redirectToHome,
     } = this.state;
 
-    if (redirectToProfile) {
-      return <Redirect to={`/user/${user._id}`} />;
+    if (redirectToHome) {
+      return <Redirect to={`/`} />;
     }
 
     return (
