@@ -8,7 +8,7 @@ import Menu from "./core/Menu";
 import Users from "./user/Users";
 import EditProfile from "./user/EditUser";
 import NewPost from "./posts/NewPost";
-
+import Admin from "./Admin/Admin";
 const MainRouter = () => (
   <div>
     <Menu />
@@ -21,7 +21,10 @@ const MainRouter = () => (
       <Route exact path="/users" component={Users} />
 
       <Route exact path="/post/create" component={NewPost} />
+      <Route exact path="/admin" component={Admin} />
     </Switch>
+
+
   </div>
 );
 export default MainRouter;

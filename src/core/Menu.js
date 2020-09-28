@@ -61,6 +61,11 @@ function Menu() {
             </li>
           </Fragment>
         )}
+          <li className="nav-item">
+          <Link className="nav-link  text-white" to="/admin">
+            Admin
+          </Link>
+        </li>  
       </ul>
     </div>
   );
