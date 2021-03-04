@@ -59,11 +59,11 @@ function Menu() {
                 Sign out
               </a>
             </li>
-            <li className="nav-item">
+            {/* <li className="nav-item">
           <Link className="nav-link  text-white" to="/admin">
             Admin
           </Link>
-        </li>  
+        </li>   */}
           </Fragment>
         )}
          
