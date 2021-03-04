@@ -7,6 +7,7 @@ import Profile from "./user/Profile";
 import Menu from "./core/Menu";
 import Users from "./user/Users";
 import EditProfile from "./user/EditUser";
+import SinglePost from "./posts/SinglePost"
 import NewPost from "./posts/NewPost";
 import Admin from "./Admin/Admin";
 const MainRouter = () => (
@@ -19,7 +20,7 @@ const MainRouter = () => (
       <Route exact path="/user/:userId" component={Profile} />
       <Route exact path="/user/edit/:userId" component={EditProfile} />
       <Route exact path="/users" component={Users} />
-
+      <Route exact path="/post/:postId" component={SinglePost} />
       <Route exact path="/post/create" component={NewPost} />
       <Route exact path="/admin" component={Admin} />
     </Switch>
