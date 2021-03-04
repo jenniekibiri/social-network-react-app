@@ -9,3 +9,26 @@
 .nav {
   background: linear-gradient(145deg, #617684, #52636f);
 }
+
+.w-full {
+  width: 100%;
+}
+.post-cover{
+  background-image:url('https://cdn.hashnode.com/res/hashnode/image/upload/v1614786838632/hOcvvS2wi.jpeg?w=600&amp;fit=crop&amp;crop=entropy&amp;auto=compress')
+}
+.max-w-full {
+  max-width: 100%;
+}
+.min-w-full {
+  min-width: 100%;
+}
+.break-words {
+  overflow-wrap: break-word;
+  word-break: break-word;
+}
+.block {
+  display: block;
+}
+.rounded-circle{
+  height: 40px !important;
+}

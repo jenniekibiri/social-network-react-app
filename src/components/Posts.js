@@ -65,11 +65,14 @@ return(
 
  const { posts } = this.state;
     return (
-
+      <div>
      <div>
        {this.showPosts(posts)}
 
-     </div>
+        </div>   
+        
+</div>
+     
     )
   }
 }
