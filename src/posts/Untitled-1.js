@@ -1,0 +1,2 @@
+<a href="https://areknawo.hashnode.dev/tailwind-jsx-and-class-composition"
+    class="block w-full overflow-hidden bg-gray-100 bg-center bg-cover rounded post-cover dark:bg-brand-grey-800 dark:border-brand-grey-800" target="_blank" aria-label="Cover photo for the post titled: Tailwind JSX and class composition" style="background-image:url('https://cdn.hashnode.com/res/hashnode/image/upload/v1614786838632/hOcvvS2wi.jpeg?w=600&amp;fit=crop&amp;crop=entropy&amp;auto=compress')"></a>
