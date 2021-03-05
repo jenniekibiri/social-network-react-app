@@ -31,7 +31,7 @@ function Menu() {
           <Fragment>
             <li className="nav-item">
               <li className="nav-item">
-                <Link to={`/post/create`} className="nav-link text-white">
+                <Link to={`/newpost`} className="nav-link text-white">
                   Create Post
                 </Link>
               </li>

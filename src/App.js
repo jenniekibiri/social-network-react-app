@@ -1,12 +1,11 @@
-import React from 'react';
-import {BrowserRouter} from 'react-router-dom'
-import MainRouter from './MainRouter'
+import React from "react";
+import { BrowserRouter } from "react-router-dom";
+import MainRouter from "./MainRouter";
 
-
-const App = ()=> (
+const App = () => (
   <BrowserRouter>
-  <MainRouter/>
+    <MainRouter />
   </BrowserRouter>
-)
+);
 
 export default App;

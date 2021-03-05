@@ -57,6 +57,7 @@ class NewPost extends Component {
       const token = isAuthenticated().token;
 
       create(userId, token, this.postData).then((data) => {
+        console.log(`${process.env.REACT_APP_API_URL}/posts/new/${userId}`);
         if (data.error) this.setState({ error: data.error });
         else {
           this.setState({
@@ -78,6 +79,7 @@ class NewPost extends Component {
           onChange={this.handleChange("photo")}
           type="file"
           accept="image/*"
+          required
           className="form-control"
         />
       </div>
@@ -86,6 +88,7 @@ class NewPost extends Component {
         <input
           onChange={this.handleChange("title")}
           type="text"
+          required
           className="form-control"
           value={title}
         />
@@ -96,6 +99,7 @@ class NewPost extends Component {
         <textarea
           onChange={this.handleChange("body")}
           type="text"
+          required
           className="form-control"
           value={body}
         />

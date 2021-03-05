@@ -22,7 +22,8 @@ const MainRouter = () => (
       <Route exact path="/user/edit/:userId" component={EditProfile} />
       <Route exact path="/users" component={Users} />
       <Route exact path="/post/:postId" component={SinglePost} />
-      <Route exact path="/post/create" component={NewPost} />
+     
+      <Route exact path="/newpost" component={NewPost} />
       <Route exact path="/posts/by/:userId" component={PostsBy} />
       {/* <Route exact path="/admin" component={Admin} /> */}
     </Switch>
