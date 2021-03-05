@@ -70,12 +70,12 @@ export class posts extends Component {
                       </p>
                     </div>
 
-                    <div className="col-md-6 d-flex  ">
+                    <div className="col-md-6   ">
                       <img
-                        className="img-fluid"
+                        className="img-fluid rounded mx-auto d-block mb-1"
                         onError={(i) => (i.target.src = `${DefaultPost}`)}
                         src={`data:image/png;base64,${base64String}`}
-                        style={{ height: "250px", width: "85%" }}
+                        style={{ height: "230px", width: "90%" }}
                       />
                     </div>
                   </div>
