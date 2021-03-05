@@ -10,4 +10,14 @@ The user can also create postand see all users
 The app is deployed on heroku.
 
 [Visit the app](https://socioh.herokuapp.com/)
-![site image](src/images/Screenshot.png)
+- Home page
+  ![](https://i.imgur.com/ySCenKk.png)
+
+- Sigin page
+  ![](https://i.imgur.com/dgu8SJi.png)
+
+- Readmore Posts
+  ![](https://i.imgur.com/YEqADli.png)
+
+- profile
+  ![](https://i.imgur.com/cEo00sf.png)
