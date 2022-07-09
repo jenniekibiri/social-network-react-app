@@ -51,7 +51,7 @@ class SinglePost extends Component {
               </div>
 
               <h2 className="entry-title">
-                <a href="blog-single.html">
+                <a href="#">
                     {post.title}
                 </a>
               </h2>
@@ -64,13 +64,13 @@ class SinglePost extends Component {
                   </li>
                   <li className="d-flex align-items-center">
                     <i className="bi bi-clock"></i>{" "}
-                    <a href="blog-single.html">
+                    <a href="#">
                       <time datetime="2020-01-01">{new Date(post.created).toDateString()}</time>
                     </a>
                   </li>
                   <li className="d-flex align-items-center">
                     <i className="bi bi-chat-dots"></i>{" "}
-                    <a href="blog-single.html">0 Comments</a>
+                    <a href="#">0 Comments</a>
                   </li>
                 </ul>
               </div>
