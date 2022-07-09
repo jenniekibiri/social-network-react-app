@@ -71,53 +71,82 @@ class Signin extends Component {
     }
 
     return (
-      <div className="container">
-        <h2 className="mb-5 mt-5">Signup</h2>
+      <div className="main">
+        <section className="signup">
+          <div className="formcontainer">
+            <div className="signup-content">
+              <div className="signup-image">
+                <figure>
+                  <img src="assets/img/signin-image.jpg" alt="sign up image" />
+                </figure>
+                <a href="/signup" className="signup-image-link">
+                  Not a member? Sign up here
+                </a>
+              </div>
+              <div className="signup-form">
+                <h2 className="form-title">Sign in</h2>
+                <form
+                  method="POST"
+                  className="register-form"
+                  id="register-form"
+                >
+                  <div
+                    className="alert alert-danger"
+                    style={{ display: error ? "" : "none" }}
+                  >
+                    {error}
+                  </div>
 
-        <hr />
-        <SocialLogin />
-        <hr />
-        <form>
-          <div
-            className="alert alert-danger"
-            style={{ display: error ? "" : "none" }}
-          >
-            {error}
-          </div>
+                  {loading ? (
+                    <div className="Jumbotron text-center">
+                      <h2 className="spinner">loading ...</h2>
+                    </div>
+                  ) : (
+                    ""
+                  )}
 
-          {loading ? (
-            <div className="Jumbotron text-center">
-              <h2 className="spinner">loading ...</h2>
+                  <div className="form-group">
+                    <label for="email">
+                      <i className="zmdi zmdi-email"></i>
+                    </label>
+                    <input
+                      type="email"
+                      onChange={this.handleChange("email")}
+                      value={email}
+                      name="email"
+                      placeholder="Email"
+                    />
+                  </div>
+                  <div className="form-group">
+                    <label for="password">
+                      <i className="zmdi zmdi-lock"></i>
+                    </label>
+                    <input
+                      type="password"
+                      onChange={this.handleChange("password")}
+                      value={password}
+                      name="password"
+                      placeholder="Password"
+                    />
+                  </div>
+                  <div className="d-flex justify-content-center">
+                    <button
+                      type="button"
+                      onClick={this.clickSubmit}
+                      className="btn btn-primary btn-block btn-lg"
+                    >
+                      Login
+                    </button>
+                  </div>
+                </form>
+                <div className="social-login">
+                  <span className="social-label">Or login with:</span>
+                  <SocialLogin />
+                </div>
+              </div>
             </div>
-          ) : (
-            ""
-          )}
-          <div className="form-group">
-            <label className="text-muted">Email</label>
-            <input
-              type="email"
-              className="form-control"
-              onChange={this.handleChange("email")}
-              value={email}
-            ></input>
           </div>
-          <div className="form-group">
-            <label className="text-muted">Password</label>
-            <input
-              type="password"
-              className="form-control"
-              onChange={this.handleChange("password")}
-              value={password}
-            ></input>
-          </div>
-          <button
-            type="button"
-            onClick={this.clickSubmit}
-            className="btn btn-raised btn-primary"
-          >
-            Submit
-          </button>
-        </form>
+        </section>
       </div>
     );
   }

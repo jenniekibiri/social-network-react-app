@@ -29,26 +29,19 @@ class SocialLogin extends Component {
       }
     });
   };
-  
+
   render() {
     const { redirectToReferrer } = this.state;
     if (redirectToReferrer) {
       return <Redirect to="/" />;
     }
     return (
-      <div className="container ">
-        <div className="row">
-          <div className="col-md-3">
-            <GoogleLogin
-              clientId="51203616981-ldm8946dv68h2ffv65d7v29qshba2pjm.apps.googleusercontent.com"
-              buttonText="Login with Google"
-              onSuccess={this.responseGoogle}
-              onFailure={this.responseGoogle}
-            />
-          </div>
-         
-        </div>
-      </div>
+      <GoogleLogin
+        clientId="51203616981-ldm8946dv68h2ffv65d7v29qshba2pjm.apps.googleusercontent.com"
+        buttonText="Google"
+        onSuccess={this.responseGoogle}
+        onFailure={this.responseGoogle}
+      />
     );
   }
 }

@@ -27,7 +27,7 @@ class Signup extends Component {
       name,
       password,
     };
-    fetch( `${process.env.REACT_APP_API_URL}/signup`, {
+    fetch(`${process.env.REACT_APP_API_URL}/signup`, {
       method: "POST",
       headers: {
         Accept: "application/json",
@@ -57,57 +57,91 @@ class Signup extends Component {
   };
   render() {
     const { name, email, password, error, open } = this.state;
+
     return (
-      <div className="container">
-        <h2 className="mb-5 mt-5">Signup</h2>
-        <form>
-          <div
-            className="alert alert-danger"
-            style={{ display: error ? "" : "none" }}
-          >
-            {error}
+      <div className="main">
+        <section className="signup">
+          <div className="formcontainer">
+            <div className="signup-content">
+              <div className="signup-form">
+                <h2 className="form-title">Sign up</h2>
+                <form
+                  method="POST"
+                  className="register-form"
+                  id="register-form"
+                >
+                  <div
+                    className="alert alert-danger"
+                    style={{ display: error ? "" : "none" }}
+                  >
+                    {error}
+                  </div>
+                  <div
+                    className="alert alert-info"
+                    style={{ display: open ? "" : "none" }}
+                  >
+                    New account has been successfully created.{" "}
+                    <Link to="/signin">Signin</Link>!
+                  </div>
+                  <div className="form-group">
+                  <label for="name">
+                      <i className="zmdi zmdi-name"></i>
+                    </label>
+                    <input
+                      type="text"
+                      
+                      onChange={this.handleChange("name")}
+                      value={name}
+                      name="name"
+                      placeholder="Name"
+                    ></input>
+                  </div>
+                  <div className="form-group">
+                    <label for="email">
+                      <i className="zmdi zmdi-email"></i>
+                    </label>
+                    <input
+                      type="email"
+                      onChange={this.handleChange("email")}
+                      value={email}
+                      name="email"
+                      placeholder="Email"
+                    />
+                  </div>
+                  <div className="form-group">
+                    <label for="pass">
+                      <i className="zmdi zmdi-lock"></i>
+                    </label>
+                    <input
+                      type="password"
+                      onChange={this.handleChange("password")}
+                      value={password}
+                      name="password"
+                      placeholder="Password"
+                    />
+                  </div>
+                  <div className="d-flex justify-content-center">
+                    <button
+                      type="button"
+                      onClick={this.clickSubmit}
+                      className="btn btn-primary btn-block btn-lg"
+                    >
+                      Register
+                    </button>
+                  </div>
+                </form>
+              </div>
+              <div className="signup-image">
+                <figure>
+                  <img src="assets/img/signup-image.jpg" alt="sign up image" />
+                </figure>
+                <a href="/signin" className="signup-image-link">
+                  Already a member? Sign in here
+                </a>
+              </div>
+            </div>
           </div>
-          <div
-            className="alert alert-info"
-            style={{ display: open ? "" : "none" }}
-          >
-            New account has been successfully created. <Link to='/signin'>Signin</Link>!
-          </div>
-          <div className="form-group">
-            <label className="text-muted">Name</label>
-            <input
-              type="text"
-              className="form-control"
-              onChange={this.handleChange("name")}
-              value={name}
-            ></input>
-          </div>
-          <div className="form-group">
-            <label className="text-muted">Email</label>
-            <input
-              type="email"
-              className="form-control"
-              onChange={this.handleChange("email")}
-              value={email}
-            ></input>
-          </div>
-          <div className="form-group">
-            <label className="text-muted">Password</label>
-            <input
-              type="password"
-              className="form-control"
-              onChange={this.handleChange("password")}
-              value={password}
-            ></input>
-          </div>
-          <button
-            type="button"
-            onClick={this.clickSubmit}
-            className="btn btn-raised btn-primary"
-          >
-            Submit
-          </button>
-        </form>
+        </section>
       </div>
     );
   }

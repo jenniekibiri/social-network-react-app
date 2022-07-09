@@ -1,8 +1,8 @@
-import React, { Component } from "react";
+import React, { Component, Fragment } from "react";
 import { allPosts } from "./apiPosts";
 import { Link } from "react-router-dom";
 import DefaultPost from "../images/flat.jpg";
-import "../css/style.css";
+
 
 import UserImage from "../images/user.png";
 export class posts extends Component {
@@ -29,7 +29,7 @@ export class posts extends Component {
   }
   showPosts = (posts) => {
     return (
-      <div className="parent">
+      <Fragment>
         {posts.map((post, i) => {
           const base64String = btoa(
             String.fromCharCode(...new Uint8Array(post.photo.data.data))
@@ -37,68 +37,74 @@ export class posts extends Component {
           const posterId = post.postedBy ? `/user/${post.postedBy._id}` : "";
           const posterName = post.postedBy ? post.postedBy.name : " Unknown";
           return (
-            <div>
-              <div className="row">
-                <div className="bg-white px-2 py-2 w-full">
-                  <div className="d-flex flex-row bd-highlight mb-3">
-                    <div className="p-2 bd-highlight">
-                      <img
-                        src={UserImage}
-                        className="rounded-circle img-fluid"
-                        alt="Cinque Terre"
-                      />
-                    </div>
-                    <div className="d-flex flex-column bd-highlight">
-                      <h5 className=" text-dark">{posterName}</h5>
-                      <p className="">
-                        {new Date(post.created).toDateString()}
-                      </p>
-                    </div>
+           
+              <div
+                className="col-lg-8 entries"
+                style={{
+                
+                  margin: "0 auto",
+                }}
+              >
+                <article className="entry">
+                  <div className="entry-img">
+                    <img  onError={(i) => (i.target.src = `${DefaultPost}`)}
+                        src={`data:image/png;base64,${base64String}`} alt="" className="img-fluid"
+                         />
                   </div>
-                  <div className="row bd-highlight  ">
-                    <div className="col-md-6 bd-highlight ">
-                      <h4 className="mb-4 text-dark">{post.title}</h4>
-                      <p className="card-text">
-                        {post.body.substring(0, 100)} ...{" "}
-                        <Link
-                          to={`/post/${post._id}`}
-                          href="#"
-                          className="btn btn-raised btn-secondary btn-sm"
-                        >
-                          Read More
-                        </Link>
-                      </p>
-                    </div>
 
-                    <div className="col-md-6   ">
-                      <img
-                        className="img-fluid rounded mx-auto d-block mb-1"
-                        onError={(i) => (i.target.src = `${DefaultPost}`)}
-                        src={`data:image/png;base64,${base64String}`}
-                        style={{ height: "230px", width: "90%" }}
-                      />
+                  <h2 className="entry-title">
+                    <a href="#">{post.title}</a>
+                  </h2>
+       
+                  <div className="entry-meta" >
+                    <ul>
+                      <li className="d-flex flex-row align-items-center">
+                        <i className="bi bi-person"></i>{" "}
+                        <a href="#">{posterName}</a>
+                      </li>
+                      <li className="d-flex align-items-center">
+                        <i className="bi bi-clock"></i>{" "}
+                        <a href="#">
+                          <time datetime="2020-01-01">
+                            {new Date(post.created).toDateString()}
+                          </time>
+                        </a>
+                      </li>
+                      <li className="d-flex align-items-center">
+                        <i className="bi bi-chat-dots"></i>{" "}
+                        <a href="#">0 Comments</a>
+                      </li>
+                    </ul>
+                  </div>
+
+                  <div className="entry-content">
+                    <p>{post.body}</p>
+                    <div className="read-more">
+                      <Link to={`/post/${post._id}`} href="#">
+                        Read More
+                      </Link>
                     </div>
                   </div>
-                </div>
-              </div>
-              <div>
-                <hr></hr>
-              </div>
+                </article>
+              
+
+        
+              <div></div>
             </div>
           );
         })}
-      </div>
+      </Fragment>
     );
   };
   render() {
     const { posts } = this.state;
 
     return (
-      <div className="container">
+      <Fragment>
         {/* if you want to use the curly braces use user return else use bracets  */}
 
         {this.showPosts(posts)}
-      </div>
+      </Fragment>
     );
   }
 }
