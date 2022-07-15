@@ -11,6 +11,7 @@ import SinglePost from "./posts/SinglePost"
 import NewPost from "./posts/NewPost";
 import Admin from "./Admin/Admin";
 import PostsBy from "./posts/PostBy";
+import { Footer } from "./core/Footer";
 const MainRouter = () => (
   <div>
     <Menu />
@@ -27,6 +28,7 @@ const MainRouter = () => (
       <Route exact path="/posts/by/:userId" component={PostsBy} />
       {/* <Route exact path="/admin" component={Admin} /> */}
     </Switch>
+
 
 
   </div>
